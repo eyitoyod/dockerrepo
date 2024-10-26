@@ -26,3 +26,4 @@ EXPOSE 5000
 # Set the default command to run the application
 CMD ["python", "/usr/src/app/app.py"]
 
+
