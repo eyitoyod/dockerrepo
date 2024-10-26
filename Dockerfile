@@ -4,14 +4,18 @@ FROM python:3.9-alpine
 # Set the working directory
 WORKDIR /usr/src/app
 
-# Copy the requirements file
+# Copy the requirements file to the working directory
 COPY requirements.txt .
 
-# Install dependencies
+# Install the dependencies listed in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application files
-COPY . .
+# Copy the application and template files
+COPY app.py /usr/src/app/
+COPY templates/index.html /usr/src/app/templates/
+
+# Expose the port the app will run on
+EXPOSE 5000
 
 # Set the default command to run the application
-CMD ["python", "app.py"]
+CMD ["python", "/usr/src/app/app.py"]
