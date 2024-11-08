@@ -1,11 +1,9 @@
 from flask import Flask, render_template
-from urllib.parse import quote
-
 import random
 
 app = Flask(__name__)
 
-# list of cat images
+# List of cat images
 images = [
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26388-1381844103-11.gif",
     "http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr01/15/9/anigif_enhanced-buzz-31540-1381844535-8.gif",
@@ -23,8 +21,11 @@ images = [
 
 @app.route('/')
 def index():
-    url = random.choice(images)
-    return render_template('index.html', url=url)
+    try:
+        url = random.choice(images)
+        return render_template('index.html', url=url)
+    except Exception as e:
+        return f"An error occurred: {e}", 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5000)
