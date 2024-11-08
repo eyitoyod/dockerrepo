@@ -15,6 +15,8 @@ COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install Werkzeug==2.0.3
+
 
 # Copy the application and template files
 COPY app.py /usr/src/app/
