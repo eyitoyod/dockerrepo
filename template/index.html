@@ -1,26 +1,40 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Container Welcome Page</title>
     <style type="text/css">
-      body {
-        background: black;
-        color: white;
-      }
-      div.container {
-        max-width: 500px;
-        margin: 100px auto;
-        border: 20px solid white;
-        padding: 10px;
-        text-align: center;
-      }
-      h4 {
-        text-transform: uppercase;
-      }
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            border: 4px solid white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        h4, h3 {
+            margin: 10px 0;
+        }
+        h4 {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <h4>Welcome to Docker Container running inside a VM, This very simple Python App running inside a Docker container!!</h4>
-      <h3> Learning Docker is really fun and Anything is Possible!!!! </h3>
+        <h4>Welcome to Docker Container Running Inside a VM</h4>
+        <p>This is a very simple Python app running inside a Docker container!</p>
+        <h3>Learning Docker is really fun and anything is possible!</h3>
     </div>
-  </body>
+</body>
 </html>
