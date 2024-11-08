@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from urllib.parse import quote
-from werkzeug.urls import url_quote
 
 import random
 
