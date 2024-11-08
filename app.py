@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from werkzeug.urls import url_quote
+
 import random
 
 app = Flask(__name__)
