@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from urllib.parse import quote  # Replace url_quote with this
 import random
 
 app = Flask(__name__)
@@ -23,7 +24,8 @@ images = [
 def index():
     try:
         url = random.choice(images)
-        return render_template('index.html', url=url)
+        encoded_url = quote(url, safe=':/')  # Use quote for URL encoding
+        return render_template('index.html', url=encoded_url)
     except Exception as e:
         return f"An error occurred: {e}", 500
 
